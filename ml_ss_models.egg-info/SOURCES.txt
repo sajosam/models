@@ -1,8 +1,8 @@
 README.md
 setup.py
-Models/__init__.py
-Models/classifier.py
-Models/regression.py
+ml-ss-models/__init__.py
+ml-ss-models/classifier.py
+ml-ss-models/regression.py
 ml_ss_models.egg-info/PKG-INFO
 ml_ss_models.egg-info/SOURCES.txt
 ml_ss_models.egg-info/dependency_links.txt

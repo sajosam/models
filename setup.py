@@ -9,7 +9,7 @@ LONG_DESCRIPTION = 'A package that allows to build machine learning models for t
 
 # Setting up
 setup(
-    name="ml-ss-models",
+    name="model-pkg-sajosam",
     version=VERSION,
     author="sajo sam",
     author_email="<saajosaam@gmail.com>",
