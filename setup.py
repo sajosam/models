@@ -3,24 +3,19 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-here = os.path.abspath(os.path.dirname(__file__))
-
-with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
-    long_description = "\n" + fh.read()
-
 VERSION = '0.0.1'
 DESCRIPTION = 'Machine Learning models'
 LONG_DESCRIPTION = 'A package that allows to build machine learning models for the purpose of prediction of the future. ' 
 
 # Setting up
 setup(
-    name="models",
+    name="ml-ss-models",
     version=VERSION,
     author="sajo sam",
     author_email="<saajosaam@gmail.com>",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     install_requires=['pandas'],
     keywords=['python', 'classification','regression','machine learning models','hyper parameter turning'],
