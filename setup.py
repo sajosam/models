@@ -8,7 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.0.2.2'
+VERSION = '1.0.3'
 DESCRIPTION = 'Machine Learning models make simple'
 LONG_DESCRIPTION = '''
                                         Machine Learning models
