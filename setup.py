@@ -3,16 +3,23 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-VERSION = '0.0.1'
-DESCRIPTION = 'Machine Learning models'
-LONG_DESCRIPTION = 'A package that allows to build machine learning models for the purpose of prediction of the future. ' 
+here = os.path.abspath(os.path.dirname(__file__))
+
+with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
+    long_description = "\n" + fh.read()
+
+VERSION = '1.0.2.2'
+DESCRIPTION = 'Machine Learning models make simple'
+LONG_DESCRIPTION = '''
+                                        Machine Learning models
+                                    (single-file, easy-to-use, and modular)'''
 
 # Setting up
 setup(
-    name="model-pkg-sajosam",
+    name="ml-pkg-models",
     version=VERSION,
     author="sajo sam",
-    author_email="<saajosaam@gmail.com>",
+    author_email="<sajosamambalakara@gmail.com>",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
