@@ -22,7 +22,7 @@ setup(
     author_email="<sajosamambalakara@gmail.com>",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    long_description=LONG_DESCRIPTION,
+    long_description=long_description,
     packages=find_packages(),
     install_requires=['pandas'],
     keywords=['python', 'classification','regression','machine learning models','hyper parameter turning'],

@@ -1,58 +1,14 @@
 Metadata-Version: 2.1
 Name: ml-pkg-models
-Version: 1.0.2.1
+Version: 1.0.2.2
 Summary: Machine Learning models make simple
 Home-page: UNKNOWN
 Author: sajo sam
 Author-email: <sajosamambalakara@gmail.com>
 License: UNKNOWN
 Description: 
-        
                                                 Machine Learning models
                                             (single-file, easy-to-use, and modular)
-        
-                        classfication model
-                                classifier->
-                                        Scaling->
-                                            standard_scaler    
-                                            MinMax
-                                        TrainSplitTest->
-                                                    split
-                                        classifierSingleModel->
-                                                            model_fit
-                                        classifierHyper->
-                                                    adaBoost, ada_pred 
-                                                    randomforest, rf_pred 
-                                                    gradientboost, gb_pred
-                                                    logistic, l_pred 
-                                                    svm, svm_pred 
-                                                    knn, knn_pred 
-                                                    binomialnb, nb_pred 
-                                                    multinomialnb, multinomialnb_pred 
-                                                    gaussiannb, gaussiannb_pred 
-                                                    decisiontree, decisiontree_pred 
-                                                    xgboost, xgboost_pred 
-                                                    bagging, bagging_pred 
-                                                    extra, extra_pred 
-                                                    ridge, ridge_pred
-                                            
-                                        Modelling->
-                                                logistic, log_pred
-                                                k_nn, knn_pred 
-                                                svc, svc_pred 
-                                                decision_tree, dt_pred 
-                                                random_forest, rf_pred 
-                                                gradient_boosting, gb_pred 
-                                                XGBOOST, xgb_pred 
-                                                adaBoostC, abc_pred 
-                                                bernoullinb, bnb_pred 
-                                                multinomialnb, mnb_pred 
-                                                bagging, bagging_pred 
-                                                extraTrees, et_pred 
-                                                ridge, r_pred 
-                                                sgd, sgd_pred
-                                                                
-        
 Keywords: python,classification,regression,machine learning models,hyper parameter turning
 Platform: UNKNOWN
 Classifier: Development Status :: 1 - Planning
