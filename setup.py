@@ -16,7 +16,7 @@ LONG_DESCRIPTION = '''
 
 # Setting up
 setup(
-    name="ml-pkg-models",
+    name="machine-learning-models-ss",
     version=VERSION,
     author="sajo sam",
     author_email="<sajosamambalakara@gmail.com>",
