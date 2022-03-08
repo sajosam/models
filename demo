@@ -1,0 +1,25 @@
+[LogisticRegression()1,KNeighborsClassifier()1,GaussianNB()1,
+                    MultinomialNB()1,BaggingClassifier()1,ExtraTreesClassifier()1,
+                    RidgeClassifier()1,SGDClassifier()1,RandomForestClassifier()1,
+                    XGBClassifier()1,AdaBoostClassifier()1,BernoulliNB()1,GradientBoostingClassifier()1,DecisionTreeClassifier()1,SVC()1,Lasso()1]
+
+                    #logistic regression
+        l=LogisticRegression(random_state=42)
+        knn=KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)
+        rf=RandomForestClassifier(random_state=42)
+        ada_classifier = AdaBoostClassifier(random_state=42)
+        gb=GradientBoostingClassifier(random_state=42)decision treeee
+        xgb=XGBClassifier()
+        lasso=Lasso()
+        sgdc=SGDClassifier()    
+        dt=DecisionTreeClassifier()
+        nb=BernoulliNB()
+        mb=MultinomialNB()
+        gnb=GaussianNB()
+
+        bg=BaggingClassifier()
+        xt=ExtraTreesClassifier()
+        rc=RidgeClassifier()
+        dt=DecisionTreeClassifier()
+       
+       svm
