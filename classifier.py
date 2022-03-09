@@ -18,34 +18,28 @@ from sklearn.model_selection import RandomizedSearchCV
 
 class Scaling:
     # constructor
-    def __init__(self, data_train,data_test,pred):
+    def __init__(self, data_train):
         self.data_train = data_train
-        self.data_test = data_test
-        self.pred = pred
 
     def standard_scaler(self):
         scaler=StandardScaler()
         scaler.fit(self.data_train)
         x_train=scaler.transform(self.data_train)
-        x_test=scaler.transform(self.data_test)
-        pred=scaler.transform(self.pred)
-        return x_train,x_test,pred
+        return x_train
     
     def MinMax(self):
         minmax=MinMaxScaler()
         minmax.fit(self.data_train)
         x_train=minmax.transform(self.data_train)
-        x_test=minmax.transform(self.data_test)
-        pred=minmax.transform(self.pred)
-        return x_train, x_test, pred
+        return x_train
 
 class classifierModel:
-    def __init__(self,pred, data_train,data_test,test_size=0.2,random_state=0):
-        self.data_train = data_train
-        self.data_test = data_test
+    def __init__(self,x,y,test_size=0.2,random_state=0):
+        self.x = x
+        self.y = y
         self.test_size = test_size
         self.random_state = random_state
-        self.pred = pred
+        # self.pred = pred
         self.model=[LogisticRegression(),KNeighborsClassifier(),GaussianNB(),
                     MultinomialNB(),BaggingClassifier(),ExtraTreesClassifier(),
                     RidgeClassifier(),SGDClassifier(),RandomForestClassifier(),
@@ -67,16 +61,19 @@ class classifierModel:
         return {'model name':model_name,'accuracy':acc,'confusion':confusion,'roc':roc,'f1':f1,'recall':recall,'precision':precision,'model object':model_obj}
     def Model(self):
         # split data into train and test
-        x_train, x_test, y_train, y_test = train_test_split(self.data_train, self.data_test, test_size=self.test_size, random_state=self.random_state)
+        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(self.x,self.y, test_size=self.test_size, random_state=self.random_state)
         # scaling
-        x_train, x_test, pred = Scaling(x_train,x_test,pred).standard_scaler()
+        self.x_train=Scaling(self.x_train).standard_scaler()
+        self.x_test=Scaling(self.x_test).standard_scaler()
+
+        # x_train, x_test, pred = Scaling(x_train,x_test,pred).standard_scaler()
 
         # model
         lst=[]
-        for i in range(len(self.model)):
-            self.model[i].fit(x_train, y_train)
-            y_pred=self.model[i].predict(x_test)
-            lst.append(self.cl_accuracy(self.y_test, y_pred,self.model_name[i],self.model[i]))
+        for m, m_n in zip(self.model,self.model_name):
+            model=m.fit(self.x_train, self.y_train)
+            y_pred=model.predict(self.x_test)
+            lst.append(self.cl_accuracy(self.y_test, y_pred,m_n,model))
         self.model_table=pd.DataFrame(lst)
         return self.model_table
     
@@ -568,8 +565,5 @@ class classifierModel:
     
     def ridgePredict(self,x_predict):
         return self.model_rc.predict(x_predict)
-
-
-
 
 
